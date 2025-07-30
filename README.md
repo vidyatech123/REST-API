@@ -18,10 +18,11 @@ An API, also known as an Application Programming Interface, is a set of rules th
 It is currently used in applications like mobile apps, web apps, and cloud services where the principle of the API can be the request-response exchange between a client and a server. 
 ---
 ### How APIs Work – Simple Analogy
+---
 An application programming interface (API) is a software programming code that enables two software programs to communicate. With an API, there is an exchange of data and other functionalities between software applications.
 ---
 For beginners, it is easier to understand when you consider the scenario in a restaurant. 
-
+---
 Here, the waiter is the equivalent of an API as he handles the communication between the kitchen and the customer. 
 **You(the client)** asks for the food(data). 
 The customer does not directly interact with **the kitchen(server).** 
@@ -47,18 +48,18 @@ There are five popular API request methods: GET, POST, PUT, PATCH, and DELETE.
 ### JSON stands for JavaScript Object Notation. 
 JSON is used to organize and share data using text. Using JSON, data is written in a structured list, using key-value pairs. This language-independent data format serializes and transmits structured data between two programs.
 When a REST API makes a call, the request and the response are formatted as JSON. 
-``` Example of a JSON string
+<pre>``` Example of a JSON string
 {"name":"David", 
   "age":25,
-  "job":"barber"}```
+  "job":"barber"}```</pre>
 This code defines an object with 3 properties, name, age, and job, each of which has a value. 
 If you parse the JSON string with a JavaScript program, you can access the data as an object:
-```let personName = obj.name;
-let personAge = obj.age;```
+<pre>```let personName = obj.name;
+let personAge = obj.age;```</pre>
 ---
 ## How REST APIs Work – A Simple Example
 Consider a free public API 
-```https://jsonplaceholder.typicode.com/users/1```
+<pre>```https://jsonplaceholder.typicode.com/users/1```</pre>
 The above URL is an end point. A REST API endpoint is a URL that points to a resource(s) on a server. A well-designed REST URL makes it easy to guess what it returns or does. Thus, REST is very simple and easy to read by the users.
 Paste it in your browser or Postman. 
 (In Postman, click on the + tab or click the “New” button in the top left.
@@ -67,13 +68,13 @@ Paste the above URL with GET in the dropdown.
 Click the SEND button.)
 You will get the following:
 ---
-```{
+<pre>```{
   "id": 1,
   "name": "Leanne Graham",
   "username": "Bret",
   "email": "Sincere@april.biz"
   ...
-}```
+}```</pre>
 ---
 You have got the API response. That’s how you call a REST API successfully. 
 ---
@@ -89,7 +90,7 @@ In this section, we will look at how to retrieve data from a public URL, OpenWea
 ---
 Create an HTML file called weather.html and paste the following code:
 ---
-```<!DOCTYPE html>
+<pre>```<!DOCTYPE html>
 <html>
 <head>
   <title>Weather App</title> <!-- Sets the title of the browser tab -->
@@ -129,7 +130,7 @@ Create an HTML file called weather.html and paste the following code:
     }
   </script>
 </body>
-</html>```
+</html>```<pre>
 ---
 1.	Save the file as weather.html.
 2.	Double-click it to open in any browser.
@@ -140,25 +141,25 @@ Create an HTML file called weather.html and paste the following code:
 ---
 API requests in Python are made using the requests library, which can send requests and handle responses. 
 However, it is not a part of Python's standard library and is installed using pip.
-```pip install requests```
+<pre>```pip install requests```<pre>
 ---
 ## GET and POST request example
 ---
 ### Using GET requests to retrieve data from an API.
 
-```import requests     # imports the requests module used to send HTTP requests
+<pre>```import requests     # imports the requests module used to send HTTP requests
 api_url = "https://jsonplaceholder.typicode.com/users/1"    # stores the URL endpoint of the API 
 response = requests.get(api_url)    # Sends an HTTP GET request to the URL
 if response.status_code == 200:    # if HTTP response status code is 200, it means the request was successful
     data = response.json()  # Parse JSON response
     print("Data received:", data)    # displays the parsed data
 else:
-    print(f"Error: {response.status_code} - {response.text}") # if code is not 200, error is printed with a message```
+    print(f"Error: {response.status_code} - {response.text}") # if code is not 200, error is printed with a message```</pre>
 ---
 ### Using POST Requests:
 We can use a POST request in a similar manner. 
 POST requests send data to an API to create or update resources.
-```import requests
+<pre>```import requests
 api_url = "https://api.example.com/new_entry"
 payload = {"name": "Roll_number", "value": 123}
 headers = {"Content-Type": "application/json"}
@@ -166,25 +167,25 @@ response = requests.post(api_url, json=payload, headers=headers)
 if response.status_code == 201:  # 201 Created for successful creation
     print("Entry created successfully.")
 else:
-    print(f"Error: {response.status_code} - {response.text}")```
+    print(f"Error: {response.status_code} - {response.text}")```</pre>
 ---
 ## Basic Error Handling in Python
 When writing code, we may encounter errors such as divide by zero or accessing a file that doesn’t exist. We can handle these errors using Python. Let us look at a simple example.
 ---
-```try:
+<pre>```try:
     number = int(input("Enter a number: "))
     result = 10 / number
     print(f"Result: {result}")
 except ZeroDivisionError:
     print("You can't divide by zero!")
 except ValueError:
-    print("Please enter a valid number.")```
+    print("Please enter a valid number.")```</pre>
 ---
 Here, we enter the code that may have an error under try
 •	try: The code that might cause an error goes here.
 •	except ZeroDivisionError: This block runs if the user enters 0.
 •	except ValueError: This runs if the user types a non-numeric value.
-```
+<pre>```
 ##  Testing APIs Using Postman
 Postman is used widely for building and testing APIs. It offers both manual and automated testing for different API types such as SOAP and REST.
 Let us look at a step-by-step approach on how to test APIs with Postman.
@@ -211,7 +212,7 @@ Some of the most common errors in REST APIs and their handling methods are as fo
 **400 Bad Request:**
 This error occurs when the client sends invalid data, invalid requests, or missing required parameters. The error can be addressed by validating the input data thoroughly on the server side. 
 **401 Unauthorized:**
-This error indicates that the client lacks the required valid authentication credentials. It can be handled by applying proper authentication mechanisms, such as API keys ot OAuth tokens. 
+This error indicates that the client lacks the required valid authentication credentials. It can be handled by applying proper authentication mechanisms, such as API keys or OAuth tokens. 
 **403 Forbidden:**
 The client is authenticated but does not have the required permissions to access the necessary resource.
 Always check the user roles or permissions before sending a request. 
