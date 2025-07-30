@@ -89,6 +89,7 @@ In this section, we will look at how to retrieve data from a public URL, OpenWea
 5.	The API key is used to make requests to the OpenWeatherMap API.
 	fetch() is a built-in JavaScript function used to make HTTP requests to APIs.
 	For this request, you get a response object from the server. 
+---
 
 Create an HTML file called weather.html and paste the following code:
 
@@ -128,7 +129,8 @@ Create an HTML file called weather.html and paste the following code:
     }
   </script>
 </body>
-</html>```<pre>
+</html>
+```<pre>
 
 ### Steps
 
