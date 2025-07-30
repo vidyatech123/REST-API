@@ -50,14 +50,15 @@ When a REST API makes a call, the request and the response are formatted as JSON
 ``` Example of a JSON string
 {"name":"David", 
   "age":25,
-  "job":"barber"}
+  "job":"barber"}```
 This code defines an object with 3 properties, name, age, and job, each of which has a value. 
 If you parse the JSON string with a JavaScript program, you can access the data as an object:
-let personName = obj.name;
-let personAge = obj.age;
+```let personName = obj.name;
+let personAge = obj.age;```
+---
 ## How REST APIs Work – A Simple Example
 Consider a free public API 
-https://jsonplaceholder.typicode.com/users/1
+```https://jsonplaceholder.typicode.com/users/1```
 The above URL is an end point. A REST API endpoint is a URL that points to a resource(s) on a server. A well-designed REST URL makes it easy to guess what it returns or does. Thus, REST is very simple and easy to read by the users.
 Paste it in your browser or Postman. 
 (In Postman, click on the + tab or click the “New” button in the top left.
@@ -66,13 +67,14 @@ Paste the above URL with GET in the dropdown.
 Click the SEND button.)
 You will get the following:
 ---
-{
+```{
   "id": 1,
   "name": "Leanne Graham",
   "username": "Bret",
   "email": "Sincere@april.biz"
   ...
-}
+}```
+---
 You have got the API response. That’s how you call a REST API successfully. 
 ---
 ## Walkthrough with a public API (OpenWeatherMap)
@@ -87,7 +89,7 @@ In this section, we will look at how to retrieve data from a public URL, OpenWea
 ---
 Create an HTML file called weather.html and paste the following code:
 ---
-<!DOCTYPE html>
+```<!DOCTYPE html>
 <html>
 <head>
   <title>Weather App</title> <!-- Sets the title of the browser tab -->
@@ -127,32 +129,36 @@ Create an HTML file called weather.html and paste the following code:
     }
   </script>
 </body>
-</html>
+</html>```
 ---
 1.	Save the file as weather.html.
 2.	Double-click it to open in any browser.
 3.	Type a city name like London and click "Get Weather."
 4.	You’ll see the current temperature and weather conditions.
+---
 ## Making API Requests Using Python
+---
 API requests in Python are made using the requests library, which can send requests and handle responses. 
 However, it is not a part of Python's standard library and is installed using pip.
-```pip install requests
+```pip install requests```
+---
 ## GET and POST request example
 ---
 ### Using GET requests to retrieve data from an API.
-import requests     # imports the requests module used to send HTTP requests
+
+```import requests     # imports the requests module used to send HTTP requests
 api_url = "https://jsonplaceholder.typicode.com/users/1"    # stores the URL endpoint of the API 
 response = requests.get(api_url)    # Sends an HTTP GET request to the URL
 if response.status_code == 200:    # if HTTP response status code is 200, it means the request was successful
     data = response.json()  # Parse JSON response
     print("Data received:", data)    # displays the parsed data
 else:
-    print(f"Error: {response.status_code} - {response.text}") # if code is not 200, error is printed with a message
+    print(f"Error: {response.status_code} - {response.text}") # if code is not 200, error is printed with a message```
 ---
 ### Using POST Requests:
 We can use a POST request in a similar manner. 
 POST requests send data to an API to create or update resources.
-import requests
+```import requests
 api_url = "https://api.example.com/new_entry"
 payload = {"name": "Roll_number", "value": 123}
 headers = {"Content-Type": "application/json"}
@@ -160,43 +166,47 @@ response = requests.post(api_url, json=payload, headers=headers)
 if response.status_code == 201:  # 201 Created for successful creation
     print("Entry created successfully.")
 else:
-    print(f"Error: {response.status_code} - {response.text}")
+    print(f"Error: {response.status_code} - {response.text}")```
+---
 ## Basic Error Handling in Python
 When writing code, we may encounter errors such as divide by zero or accessing a file that doesn’t exist. We can handle these errors using Python. Let us look at a simple example.
 ---
-try:
+```try:
     number = int(input("Enter a number: "))
     result = 10 / number
     print(f"Result: {result}")
 except ZeroDivisionError:
     print("You can't divide by zero!")
 except ValueError:
-    print("Please enter a valid number.")
+    print("Please enter a valid number.")```
 ---
 Here, we enter the code that may have an error under try
 •	try: The code that might cause an error goes here.
 •	except ZeroDivisionError: This block runs if the user enters 0.
 •	except ValueError: This runs if the user types a non-numeric value.
+```
 ##  Testing APIs Using Postman
 Postman is used widely for building and testing APIs. It offers both manual and automated testing for different API types such as SOAP and REST.
 Let us look at a step-by-step approach on how to test APIs with Postman.
 First, install Postman in your system from the official Postman site. 
-## Create a Request
+---
+### Create a Request
 1.	We can create a new request in the Postman application by choosing the required HTTP request method from the drop-down and supplying the URL for the request.
-
- 
 2.	Click on Send to execute the request. Postman will send the request to the specified URL and receive a response. 
 3.	One can add  assertions to ensure that your API responses contain the expected data or meet specific requirements. 
+---
 ## Status Codes in Rest APIs 
 Given below are some status codes and their meanings which we should interpret.
+---
 ### 3xx Status Codes (Redirection)
 **300 -**	The request has more than one possible response from which the user should choose one. 
 **301 -**	The URL of the requested resource has been changed permanently. 
-
+--
 ### 2xx Status Codes (Success)
 **200** - This indicates that the request has succeeded.
 **201 - ** This indicates that the request has succeeded and thus, a new resource has been created.
 Some of the most common errors in REST APIs and their handling methods are as follows:
+---
 ### Client Errors - 4xx codes
 **400 Bad Request:**
 This error occurs when the client sends invalid data, invalid requests, or missing required parameters. The error can be addressed by validating the input data thoroughly on the server side. 
@@ -207,11 +217,13 @@ The client is authenticated but does not have the required permissions to access
 Always check the user roles or permissions before sending a request. 
 **404 Not Found:**
 The requested resource does not exist at the specified URL. To handle this, verify the accuracy of the requested URL and ensure the resource exists.
+---
 ### Server Errors - 5xx codes
 ** 500 Internal Server Error:**
 A general error indicating an unexpected condition on the server that prevented it from fulfilling the request. A way to handle this is by using comprehensive error logging to identify the root cause of the error. 
 ** 503 Service Unavailable: **
 The server is temporarily unable to handle the request due to maintenance or overload. Mechanisms to handle server overload should be implemented.
+---
 *RESTful APIs are an important standard for modern web development,Their design principles and the use of HTTP methods make them the best choice in terms of scalability, flexibility, and ease of integration. *
 
 
