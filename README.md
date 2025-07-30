@@ -130,14 +130,14 @@ Create an HTML file called weather.html and paste the following code:
   </script>
 </body>
 </html>
-```<pre>
+```
 
 ### Steps
 
 1.	Save the file as weather.html.
 2.	Double-click it to open in any browser.
 3.	Type a city name like London and click "Get Weather."
-4.	You’ll see the current temperature and weather conditions.
+4.	You’ll see the current temperature and weather conditions.<pre>
 
 ## Making API Requests Using Python
 ---
