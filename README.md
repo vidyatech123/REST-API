@@ -18,16 +18,16 @@ An API, also known as an Application Programming Interface, is a set of rules th
 It is currently used in applications like mobile apps, web apps, and cloud services where the principle of the API can be the request-response exchange between a client and a server. 
 ---
 ### How APIs Work – Simple Analogy
----
+
 An application programming interface (API) is a software programming code that enables two software programs to communicate. With an API, there is an exchange of data and other functionalities between software applications.
----
+
 For beginners, it is easier to understand when you consider the scenario in a restaurant. 
----
+
 Here, the waiter is the equivalent of an API as he handles the communication between the kitchen and the customer. 
 **You(the client)** asks for the food(data). 
 The customer does not directly interact with **the kitchen(server).** 
 **The waiter** acts as a middleman (API), facilitating communication between them.
----
+
 APIs can be classified based on different criteria, such as by access, by protocols, and so on. 
 With time, APIs have evolved with changing technology, thereby adding to the services they provide. 
 Based on protocols, the different types of APIs include REST, RPC, and SOAP. 
@@ -60,6 +60,7 @@ let personAge = obj.age;```</pre>
 ## How REST APIs Work – A Simple Example
 Consider a free public API 
 <pre>```https://jsonplaceholder.typicode.com/users/1```</pre>
+---	
 The above URL is an end point. A REST API endpoint is a URL that points to a resource(s) on a server. A well-designed REST URL makes it easy to guess what it returns or does. Thus, REST is very simple and easy to read by the users.
 Paste it in your browser or Postman. 
 (In Postman, click on the + tab or click the “New” button in the top left.
@@ -67,7 +68,7 @@ You will see a dropdown on the left that says GET and a long empty bar next to i
 Paste the above URL with GET in the dropdown.
 Click the SEND button.)
 You will get the following:
----
+
 <pre>```{
   "id": 1,
   "name": "Leanne Graham",
@@ -96,12 +97,8 @@ Create an HTML file called weather.html and paste the following code:
   <title>Weather App</title> <!-- Sets the title of the browser tab -->
 </head>
 <body>
- <!-- Page heading -->
   <h2>Weather Info</h2>
-  <!-- Input field for entering the city name -->
   <input type="text" id="cityInput" placeholder="Enter city name" />
-  <!-- Button that triggers the weather fetch function when clicked -->
-
   <button onclick="getWeather()">Get Weather</button>
   <p id="weather">Weather data will appear here.</p>
   <script>
@@ -131,12 +128,12 @@ Create an HTML file called weather.html and paste the following code:
   </script>
 </body>
 </html>```<pre>
----
+
 1.	Save the file as weather.html.
 2.	Double-click it to open in any browser.
 3.	Type a city name like London and click "Get Weather."
 4.	You’ll see the current temperature and weather conditions.
----
+
 ## Making API Requests Using Python
 ---
 API requests in Python are made using the requests library, which can send requests and handle responses. 
