@@ -14,6 +14,7 @@ This is a complete beginner's guide on how to get started and coding with REST A
 ---
 ## Overview
 ### What is an API?
+---
 An API, also known as an Application Programming Interface, is a set of rules that allows different programs to communicate with each other. It enables one application to request services or data from another.
 It is currently used in applications like mobile apps, web apps, and cloud services where the principle of the API can be the request-response exchange between a client and a server. 
 ---
@@ -76,9 +77,9 @@ You will get the following:
   "email": "Sincere@april.biz"
   ...
 }```</pre>
----
+
 You have got the API response. That’s how you call a REST API successfully. 
----
+
 ## Walkthrough with a public API (OpenWeatherMap)
 In this section, we will look at how to retrieve data from a public URL, OpenWeatherMap. This URL can be used to get the temperature of a city and display it. Let us look at the steps.
 1.	First, obtain an API Key:
@@ -90,7 +91,7 @@ In this section, we will look at how to retrieve data from a public URL, OpenWea
 	For this request, you get a response object from the server. 
 
 Create an HTML file called weather.html and paste the following code:
----
+
 <pre>```<!DOCTYPE html>
 <html>
 <head>
