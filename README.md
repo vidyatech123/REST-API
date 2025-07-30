@@ -86,15 +86,15 @@ In this section, we will look at how to retrieve data from a public URL, OpenWea
 3.	After signing up, your API key will be found on your account page.
 4.	Copy your API key. 
 5.	The API key is used to make requests to the OpenWeatherMap API.
-•	fetch() is a built-in JavaScript function used to make HTTP requests to APIs.
-•	For this request, you get a response object from the server. 
----
+	fetch() is a built-in JavaScript function used to make HTTP requests to APIs.
+	For this request, you get a response object from the server. 
+
 Create an HTML file called weather.html and paste the following code:
 ---
 <pre>```<!DOCTYPE html>
 <html>
 <head>
-  <title>Weather App</title> <!-- Sets the title of the browser tab -->
+  <title>Weather App</title> 
 </head>
 <body>
   <h2>Weather Info</h2>
@@ -128,6 +128,8 @@ Create an HTML file called weather.html and paste the following code:
   </script>
 </body>
 </html>```<pre>
+
+### Steps
 
 1.	Save the file as weather.html.
 2.	Double-click it to open in any browser.
